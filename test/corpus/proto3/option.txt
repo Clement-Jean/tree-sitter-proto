@@ -1,0 +1,61 @@
+================================================================================
+Option statement (simple)
+================================================================================
+
+syntax = "proto3";
+
+option deprecated = true;
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax3)
+  (option
+   name: (option_name
+          part: (identifier))
+   value: (constant (bool (true)))))
+
+================================================================================
+Option statement (fully qualified identifier)
+================================================================================
+
+syntax = "proto3";
+
+option (a.test.option) = true;
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax3)
+  (option
+   name: (option_name
+          part: (full_ident
+            	 part: (identifier)
+            	 part: (identifier)
+            	 part: (identifier)))
+   value: (constant (bool (true)))))
+
+================================================================================
+Option statement (block)
+================================================================================
+
+syntax = "proto3";
+
+option test = {
+  test: "a test"
+};
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax3)
+  (option
+   name: (option_name
+          part: (identifier))
+   value: (constant
+   	   (message_value
+   	    name: (identifier)
+	    value: (constant (string))))))
+
+
+

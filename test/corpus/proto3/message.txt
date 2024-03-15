@@ -1,0 +1,312 @@
+================================================================================
+Message (empty)
+================================================================================
+
+syntax = "proto3";
+
+message Test {}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax3)
+  (message
+   name: (message_name)
+   (message_body)))
+
+================================================================================
+Message (option)
+================================================================================
+
+syntax = "proto3";
+
+message Test {
+  option deprecated = true;
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax3)
+  (message
+   name: (message_name)
+   (message_body
+    (option
+     name: (option_name
+            part: (identifier))
+     value: (constant (bool (true)))))))
+
+================================================================================
+Message (empty statement)
+================================================================================
+
+syntax = "proto3";
+
+message Test {
+  ;
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax3)
+  (message
+   name: (message_name)
+   (message_body
+    (empty_statement))))
+
+================================================================================
+Message (field)
+================================================================================
+
+syntax = "proto3";
+
+message Test {
+  uint64 id = 1 [deprecated = true];
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax3)
+  (message
+   name: (message_name)
+   (message_body
+    (field
+     type: (type)
+     name: (identifier)
+     tag: (int_lit (decimal_lit))
+     options: (field_options
+               (field_option
+	        name: (option_name
+                       part: (identifier))
+                value: (constant (bool (true)))))))))
+
+================================================================================
+Message (repeated field)
+================================================================================
+
+syntax = "proto3";
+
+message Test {
+  repeated uint64 ids = 1 [deprecated = true];
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax3)
+  (message
+   name: (message_name)
+   (message_body
+    (field
+     label: (repeated)
+     type: (type)
+     name: (identifier)
+     tag: (int_lit (decimal_lit))
+     options: (field_options
+               (field_option
+	        name: (option_name
+                       part: (identifier))
+                value: (constant (bool (true)))))))))
+
+================================================================================
+Message (optional field)
+================================================================================
+
+syntax = "proto3";
+
+message Test {
+  optional uint64 id = 1 [deprecated = true];
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax3)
+  (message
+   name: (message_name)
+   (message_body
+    (field
+     label: (optional)
+     type: (type)
+     name: (identifier)
+     tag: (int_lit (decimal_lit))
+     options: (field_options
+               (field_option
+	        name: (option_name
+                       part: (identifier))
+                value: (constant (bool (true)))))))))
+
+================================================================================
+Message (map field)
+================================================================================
+
+syntax = "proto3";
+
+message Test {
+  map<string, uint64> occ = 1 [deprecated = true];
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax3)
+  (message
+   name: (message_name)
+   (message_body
+    (map_field
+     key_type: (key_type)
+     val_type: (type)
+     name: (identifier)
+     tag: (int_lit (decimal_lit))
+     options: (field_options
+               (field_option
+	        name: (option_name
+                       part: (identifier))
+                value: (constant (bool (true)))))))))
+
+================================================================================
+Message (reserved tag)
+================================================================================
+
+syntax = "proto3";
+
+message Test {
+  reserved 1;
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax3)
+  (message
+   name: (message_name)
+   (message_body
+    (reserved
+     (ranges
+      (range
+       start: (int_lit (decimal_lit))))))))
+
+================================================================================
+Message (reserved tags)
+================================================================================
+
+syntax = "proto3";
+
+message Test {
+  reserved 1 to 10, 11 to max;
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax3)
+  (message
+   name: (message_name)
+   (message_body
+    (reserved
+     (ranges
+      (range
+       start: (int_lit (decimal_lit))
+       end: (int_lit (decimal_lit)))
+      (range
+       start: (int_lit (decimal_lit))
+       end: (max)))))))
+
+================================================================================
+Message (reserved name)
+================================================================================
+
+syntax = "proto3";
+
+message Test {
+  reserved "id";
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax3)
+  (message
+   name: (message_name)
+   (message_body
+    (reserved
+     (field_names
+      (string))))))
+
+================================================================================
+Message (reserved names)
+================================================================================
+
+syntax = "proto3";
+
+message Test {
+  reserved "id", "name";
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax3)
+  (message
+   name: (message_name)
+   (message_body
+    (reserved
+     (field_names
+      (string)
+      (string))))))
+
+================================================================================
+Message (oneof)
+================================================================================
+
+syntax = "proto3";
+
+message Test {
+  oneof type {
+    uint32 a = 1;
+    uint64 b = 2;
+  }
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax3)
+  (message
+   name: (message_name)
+   (message_body
+    (oneof
+     name: (oneof_name)
+     (oneof_body
+      (field
+       type: (type)
+       name: (identifier)
+       tag: (int_lit (decimal_lit)))
+       (field
+        type: (type)
+        name: (identifier)
+        tag: (int_lit (decimal_lit))))))))
+
+================================================================================
+Message (nested)
+================================================================================
+
+syntax = "proto3";
+
+message Test {
+  message Another {
+  }
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax3)
+  (message
+   name: (message_name)
+   (message_body
+    (message
+     name: (message_name)
+     (message_body)))))

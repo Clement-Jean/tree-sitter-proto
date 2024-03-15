@@ -1,0 +1,79 @@
+================================================================================
+Extend (identifier)
+================================================================================
+
+syntax = 'proto2';
+
+extend Name {}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax2)
+  (extend
+   name: (message_or_enum_type
+   	  type: (identifier))))
+
+================================================================================
+Extend (fully qualified identifier)
+================================================================================
+
+syntax = 'proto2';
+
+extend google.protobuf.Empty {}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax2)
+  (extend
+   name: (message_or_enum_type
+          part: (identifier)
+          part: (identifier)
+          type: (identifier))))
+
+================================================================================
+Extensions statement (range start)
+================================================================================
+
+syntax = 'proto2';
+
+message Name {
+  extensions 1000;
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax2)
+  (message
+   name: (message_name)
+   (message_body
+    (extensions
+     (ranges
+      (range
+       start: (int_lit (decimal_lit))))))))
+
+================================================================================
+Extensions statement (range)
+================================================================================
+
+syntax = 'proto2';
+
+message Name {
+  extensions 1000 to 1005;
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (syntax2)
+  (message
+   name: (message_name)
+   (message_body
+    (extensions
+     (ranges
+      (range
+       start: (int_lit (decimal_lit))
+       end: (int_lit (decimal_lit))))))))
+

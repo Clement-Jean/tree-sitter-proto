@@ -1,0 +1,1677 @@
+[
+  {
+    "type": "bool",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "constant",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "float_lit",
+          "named": true
+        },
+        {
+          "type": "full_ident",
+          "named": true
+        },
+        {
+          "type": "int_lit",
+          "named": true
+        },
+        {
+          "type": "message_value",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "edition",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "edition",
+            "named": false
+          }
+        ]
+      },
+      "version": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "\"",
+            "named": false
+          },
+          {
+            "type": "'",
+            "named": false
+          },
+          {
+            "type": "edition_version",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "empty_statement",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "enum",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "enum",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "enum_name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "enum_body",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enum_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "empty_statement",
+          "named": true
+        },
+        {
+          "type": "option",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "extend",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "extend",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "message_or_enum_type",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "group_field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "extensions",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "extensions",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "ranges",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "field",
+    "named": true,
+    "fields": {
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "optional",
+            "named": true
+          },
+          {
+            "type": "repeated",
+            "named": true
+          },
+          {
+            "type": "required",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "options": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "field_options",
+            "named": true
+          }
+        ]
+      },
+      "tag": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "int_lit",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "field_names",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "field_option",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "option_name",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "field_options",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "field_option",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "full_ident",
+    "named": true,
+    "fields": {
+      "part": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "group_field",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "group",
+            "named": false
+          }
+        ]
+      },
+      "label": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "optional",
+            "named": true
+          },
+          {
+            "type": "repeated",
+            "named": true
+          },
+          {
+            "type": "required",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "tag": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "int_lit",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "message_body",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "import",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "import",
+            "named": false
+          }
+        ]
+      },
+      "modifier": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "public",
+            "named": true
+          },
+          {
+            "type": "weak",
+            "named": true
+          }
+        ]
+      },
+      "path": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "int_lit",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "decimal_lit",
+          "named": true
+        },
+        {
+          "type": "hex_lit",
+          "named": true
+        },
+        {
+          "type": "octal_lit",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "key_type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "map_field",
+    "named": true,
+    "fields": {
+      "key_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "key_type",
+            "named": true
+          }
+        ]
+      },
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "map",
+            "named": false
+          }
+        ]
+      },
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "optional",
+            "named": true
+          },
+          {
+            "type": "repeated",
+            "named": true
+          },
+          {
+            "type": "required",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "options": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "field_options",
+            "named": true
+          }
+        ]
+      },
+      "tag": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "int_lit",
+            "named": true
+          }
+        ]
+      },
+      "val_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "message",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "message",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "message_name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "message_body",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "message_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "empty_statement",
+          "named": true
+        },
+        {
+          "type": "enum",
+          "named": true
+        },
+        {
+          "type": "extend",
+          "named": true
+        },
+        {
+          "type": "extensions",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "group_field",
+          "named": true
+        },
+        {
+          "type": "map_field",
+          "named": true
+        },
+        {
+          "type": "message",
+          "named": true
+        },
+        {
+          "type": "oneof",
+          "named": true
+        },
+        {
+          "type": "option",
+          "named": true
+        },
+        {
+          "type": "reserved",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "message_or_enum_type",
+    "named": true,
+    "fields": {
+      "part": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "message_value",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "constant",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "oneof",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "oneof",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "oneof_name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "oneof_body",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "oneof_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "empty_statement",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "option",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "option",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "option",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "option_name",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "option_name",
+    "named": true,
+    "fields": {
+      "part": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "full_ident",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "package",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "package",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "full_ident",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "range",
+    "named": true,
+    "fields": {
+      "end": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "int_lit",
+            "named": true
+          },
+          {
+            "type": "max",
+            "named": true
+          }
+        ]
+      },
+      "keyword": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "to",
+            "named": false
+          }
+        ]
+      },
+      "start": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "int_lit",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "ranges",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "range",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "reserved",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "reserved",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "field_names",
+          "named": true
+        },
+        {
+          "type": "ranges",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "rpc",
+    "named": true,
+    "fields": {
+      "arg_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "message_or_enum_type",
+            "named": true
+          }
+        ]
+      },
+      "is_stream": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "stream",
+            "named": true
+          }
+        ]
+      },
+      "keyword": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "returns",
+            "named": false
+          },
+          {
+            "type": "rpc",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "rpc_name",
+            "named": true
+          }
+        ]
+      },
+      "ret_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "message_or_enum_type",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "rpc_body",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "rpc_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "empty_statement",
+          "named": true
+        },
+        {
+          "type": "option",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "service",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "service",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "service_name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "service_body",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "service_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "empty_statement",
+          "named": true
+        },
+        {
+          "type": "option",
+          "named": true
+        },
+        {
+          "type": "rpc",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "edition",
+          "named": true
+        },
+        {
+          "type": "empty_statement",
+          "named": true
+        },
+        {
+          "type": "enum",
+          "named": true
+        },
+        {
+          "type": "extend",
+          "named": true
+        },
+        {
+          "type": "import",
+          "named": true
+        },
+        {
+          "type": "message",
+          "named": true
+        },
+        {
+          "type": "option",
+          "named": true
+        },
+        {
+          "type": "package",
+          "named": true
+        },
+        {
+          "type": "service",
+          "named": true
+        },
+        {
+          "type": "syntax2",
+          "named": true
+        },
+        {
+          "type": "syntax3",
+          "named": true
+        },
+        {
+          "type": "syntaxEditions",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "syntax2",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "syntax",
+            "named": false
+          }
+        ]
+      },
+      "version": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "\"proto2\"",
+            "named": false
+          },
+          {
+            "type": "'proto2'",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "syntax3",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "syntax",
+            "named": false
+          }
+        ]
+      },
+      "version": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "\"proto3\"",
+            "named": false
+          },
+          {
+            "type": "'proto3'",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "syntaxEditions",
+    "named": true,
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "syntax",
+            "named": false
+          }
+        ]
+      },
+      "version": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "\"editions\"",
+            "named": false
+          },
+          {
+            "type": "'editions'",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "message_or_enum_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "value",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "options": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "value_options",
+            "named": true
+          }
+        ]
+      },
+      "tag": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "int_lit",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "value_option",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "option_name",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "value_options",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "value_option",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "\"editions\"",
+    "named": false
+  },
+  {
+    "type": "\"proto2\"",
+    "named": false
+  },
+  {
+    "type": "\"proto3\"",
+    "named": false
+  },
+  {
+    "type": "'",
+    "named": false
+  },
+  {
+    "type": "'editions'",
+    "named": false
+  },
+  {
+    "type": "'proto2'",
+    "named": false
+  },
+  {
+    "type": "'proto3'",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "bool",
+    "named": false
+  },
+  {
+    "type": "bytes",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "decimal_lit",
+    "named": true
+  },
+  {
+    "type": "double",
+    "named": false
+  },
+  {
+    "type": "edition",
+    "named": false
+  },
+  {
+    "type": "edition_version",
+    "named": true
+  },
+  {
+    "type": "enum",
+    "named": false
+  },
+  {
+    "type": "enum_name",
+    "named": true
+  },
+  {
+    "type": "escape_sequence",
+    "named": true
+  },
+  {
+    "type": "extend",
+    "named": false
+  },
+  {
+    "type": "extensions",
+    "named": false
+  },
+  {
+    "type": "false",
+    "named": true
+  },
+  {
+    "type": "fixed32",
+    "named": false
+  },
+  {
+    "type": "fixed64",
+    "named": false
+  },
+  {
+    "type": "float",
+    "named": false
+  },
+  {
+    "type": "float_lit",
+    "named": true
+  },
+  {
+    "type": "group",
+    "named": false
+  },
+  {
+    "type": "hex_lit",
+    "named": true
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "import",
+    "named": false
+  },
+  {
+    "type": "int32",
+    "named": false
+  },
+  {
+    "type": "int64",
+    "named": false
+  },
+  {
+    "type": "map",
+    "named": false
+  },
+  {
+    "type": "max",
+    "named": true
+  },
+  {
+    "type": "message",
+    "named": false
+  },
+  {
+    "type": "message_name",
+    "named": true
+  },
+  {
+    "type": "octal_lit",
+    "named": true
+  },
+  {
+    "type": "oneof",
+    "named": false
+  },
+  {
+    "type": "oneof_name",
+    "named": true
+  },
+  {
+    "type": "option",
+    "named": false
+  },
+  {
+    "type": "optional",
+    "named": true
+  },
+  {
+    "type": "package",
+    "named": false
+  },
+  {
+    "type": "public",
+    "named": true
+  },
+  {
+    "type": "repeated",
+    "named": true
+  },
+  {
+    "type": "required",
+    "named": true
+  },
+  {
+    "type": "reserved",
+    "named": false
+  },
+  {
+    "type": "returns",
+    "named": false
+  },
+  {
+    "type": "rpc",
+    "named": false
+  },
+  {
+    "type": "rpc_name",
+    "named": true
+  },
+  {
+    "type": "service",
+    "named": false
+  },
+  {
+    "type": "service_name",
+    "named": true
+  },
+  {
+    "type": "sfixed32",
+    "named": false
+  },
+  {
+    "type": "sfixed64",
+    "named": false
+  },
+  {
+    "type": "sint32",
+    "named": false
+  },
+  {
+    "type": "sint64",
+    "named": false
+  },
+  {
+    "type": "stream",
+    "named": true
+  },
+  {
+    "type": "string",
+    "named": false
+  },
+  {
+    "type": "syntax",
+    "named": false
+  },
+  {
+    "type": "to",
+    "named": false
+  },
+  {
+    "type": "true",
+    "named": true
+  },
+  {
+    "type": "uint32",
+    "named": false
+  },
+  {
+    "type": "uint64",
+    "named": false
+  },
+  {
+    "type": "weak",
+    "named": true
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  }
+]

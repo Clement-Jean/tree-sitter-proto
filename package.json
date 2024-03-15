@@ -1,0 +1,22 @@
+{
+    "name": "tree-sitter-proto",
+    "version": "1.0.0",
+    "description": "tree-sitter support for Protobuf",
+    "main": "grammar.js",
+    "scripts": {
+        "build": "tree-sitter generate && node-gyp build",
+        "test": "tree-sitter test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "github.com/Clement-Jean/tree-sitter-proto"
+    },
+    "author": "Clément Jean",
+    "license": "MIT",
+    "dependencies": {
+	    "nan": "^2.18.0"
+    },
+    "devDependencies": {
+	    "tree-sitter-cli": "^0.21.0"
+    }
+}
