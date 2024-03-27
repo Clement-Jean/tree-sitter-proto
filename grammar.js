@@ -398,7 +398,7 @@ const proto2Syntax = {
   message2: $ => proto_message($, alias($.message_body2, $.message_body)),
   message_body2: $ => basic_block($, [
     $.reserved,
-    $.extend,
+    alias($.extend2, $.extend),
     $.extensions,
     $.enum,
     alias($.message2, $.message),
@@ -409,7 +409,7 @@ const proto2Syntax = {
   ]),
 
   // extend = "extend" messageType "{" {field | group} "}"
-  extend: $ => seq(
+  extend2: $ => seq(
     field("keyword", "extend"),
     field("name", $.message_or_enum_type),
     "{",
@@ -483,12 +483,22 @@ const proto3Syntax = {
   message3: $ => proto_message($, alias($.message_body3, $.message_body)),
   message_body3: $ => basic_block($, [
     $.reserved,
+	alias($.extend3, $.extend),
     $.enum,
     alias($.message3, $.message),
     alias($.oneof3, $.oneof),
     alias($.field3, $.field),
     $.map_field,
   ]),
+
+  // extend = "extend" messageType "{" {field} "}"
+  extend3: $ => seq(
+    field("keyword", "extend"),
+    field("name", $.message_or_enum_type),
+    "{",
+    repeat(choice(alias($.field3, $.field))),
+    "}",
+  ),
 
   oneof3: $ => proto_oneof($, $.oneof_body3),
   oneof_body3: $ => basic_block($, [
@@ -539,7 +549,7 @@ module.exports = grammar({
           $.import,
           $.package,
           $.option,
-          $.extend,
+		  alias($.extend2, $.extend),
           $.enum,
           alias($.message2, $.message),
           $.service,
@@ -551,7 +561,8 @@ module.exports = grammar({
         optional(repeat(choice(
           $.import,
           $.package,
-          $.option,
+		  $.option,
+		  alias($.extend3, $.extend),
           $.enum,
           alias($.message3, $.message),
           $.service,
@@ -577,7 +588,8 @@ module.exports = grammar({
           $.import,
           $.package,
           $.option,
-          $.enum,
+		  alias($.extend3, $.extend),
+		  $.enum,
           alias($.message3, $.message),
           $.service,
           $.empty_statement,
